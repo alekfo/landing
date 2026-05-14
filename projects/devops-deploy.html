@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps & CI/CD — fieldlog.ru — Алексей</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+    <a href="../index.html" class="nav-logo">shlenskov.pro</a>
+    <ul class="nav-links">
+        <li><a href="../index.html#portfolio">← Все работы</a></li>
+        <li><a href="../index.html#contact">Заказать</a></li>
+    </ul>
+</nav>
+
+<main class="project-page container">
+
+    <div class="breadcrumb">
+        <a href="../index.html">Главная</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="../index.html#portfolio">Работы</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>DevOps & CI/CD — fieldlog.ru</span>
+    </div>
+
+    <div class="project-header">
+        <div class="project-tags">
+            <span class="tag purple">Docker Compose</span>
+            <span class="tag">nginx</span>
+            <span class="tag">Let's Encrypt</span>
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Ubuntu 22.04</span>
+        </div>
+        <h1>Production-деплой и CI/CD<br>для fieldlog.ru</h1>
+        <p class="project-lead">
+            Полный production-стек для Django-приложения: три Docker-контейнера,
+            nginx с HTTPS, автоматическое обновление сертификатов и GitHub Actions пайплайн
+            с тестами, бэкапом БД и zero-downtime деплоем по SSH.
+        </p>
+        <div class="project-meta">
+            <div class="meta-item">
+                <span class="meta-label">Сервер</span>
+                <span class="meta-value">Ubuntu 22.04 LTS, VPS</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Стек</span>
+                <span class="meta-value">Docker, nginx, Certbot, GitHub Actions</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Домен</span>
+                <span class="meta-value">fieldlog.ru (HTTPS)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-section">
+        <h2>Инфраструктура</h2>
+        <p>
+            Приложение запущено в трёх Docker-контейнерах через Compose: <code style="color:var(--accent)">web</code> (Django + Gunicorn),
+            <code style="color:var(--accent)">db</code> (PostgreSQL 16) и <code style="color:var(--accent)">nginx</code> (reverse proxy + SSL).
+            Nginx терминирует HTTPS и отдаёт статику напрямую, не нагружая Django.
+            Медиафайлы защищены от прямого доступа — выдаются только через X-Accel-Redirect после проверки авторизации в Django.
+        </p>
+    </div>
+
+    <div class="project-section">
+        <h2>HTTPS и сертификаты</h2>
+        <ul>
+            <li>Сертификат Let's Encrypt получен через Certbot (standalone mode)</li>
+            <li>Nginx: HTTP → 301 редирект на HTTPS, TLS 1.2 / 1.3</li>
+            <li>ACME-challenge проходит без даунтайма через <code style="color:var(--accent)">/var/www/certbot</code></li>
+            <li>Автопродление — cron-задача 1-го числа каждого месяца в 3:00</li>
+        </ul>
+    </div>
+
+    <div class="project-section">
+        <h2>CI/CD пайплайн — GitHub Actions</h2>
+        <p>
+            Два job-а: <code style="color:var(--accent)">test</code> и <code style="color:var(--accent)">deploy</code>.
+            Деплой запускается только если тесты прошли, и только при пуше в <code style="color:var(--accent)">main</code>
+            (не на PR — чтобы не деплоить незамерженный код).
+        </p>
+    </div>
+
+    <div class="project-section">
+        <h2>Job: test</h2>
+        <ul>
+            <li>Python 3.12, кеш pip для ускорения</li>
+            <li>Установка зависимостей из <code style="color:var(--accent)">requirements.txt</code></li>
+            <li>Применение миграций на SQLite (без внешних сервисов в CI)</li>
+            <li>Запуск тестов Django с <code style="color:var(--accent)">--verbosity=2</code></li>
+        </ul>
+    </div>
+
+    <div class="project-section">
+        <h2>Job: deploy</h2>
+        <ul>
+            <li>SSH-подключение к серверу через appleboy/ssh-action (ключи в GitHub Secrets)</li>
+            <li>Дамп PostgreSQL с временной меткой — до любых изменений</li>
+            <li>Сохранение логов приложения в файл перед пересборкой</li>
+            <li><code style="color:var(--accent)">git pull origin main</code> — забрать новый код</li>
+            <li><code style="color:var(--accent)">docker compose build --no-cache web</code> — пересобрать образ</li>
+            <li><code style="color:var(--accent)">docker compose up -d</code> — поднять без даунтайма</li>
+        </ul>
+    </div>
+
+    <div class="project-section">
+        <h2>Скриншоты</h2>
+        <div class="screenshots-grid">
+            <div>
+                <img
+                    src="../assets/img/devops-deploy/pipeline.jpg"
+                    alt="GitHub Actions пайплайн"
+                    class="screenshot"
+                >
+                <p class="screenshot-caption">GitHub Actions — успешный прогон test → deploy</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-actions">
+        <a href="../index.html#contact" class="btn btn-primary">Заказать похожее</a>
+        <a href="crm-agency.html" class="btn btn-ghost">Само приложение →</a>
+        <a href="../index.html#portfolio" class="btn btn-ghost">← Все работы</a>
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 Шленсков Алексей · Python Backend Developer</p>
+</footer>
+
+<div id="lightbox" class="lightbox-overlay">
+    <button id="lightbox-close" class="lightbox-close">✕</button>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="">
+</div>
+<script src="../assets/js/lightbox.js"></script>
+
+</body>
+</html>

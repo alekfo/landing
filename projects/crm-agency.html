@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система мониторинга fieldlog.ru — Алексей</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+    <a href="../index.html" class="nav-logo">shlenskov.pro</a>
+    <ul class="nav-links">
+        <li><a href="../index.html#portfolio">← Все работы</a></li>
+        <li><a href="../index.html#contact">Заказать</a></li>
+    </ul>
+</nav>
+
+<main class="project-page container">
+
+    <div class="breadcrumb">
+        <a href="../index.html">Главная</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="../index.html#portfolio">Работы</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Система мониторинга fieldlog.ru</span>
+    </div>
+
+    <div class="project-header">
+        <div class="project-tags">
+            <span class="tag">Django 6</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Vanilla JS</span>
+            <span class="tag purple">Docker</span>
+            <span class="tag purple">GitHub Actions</span>
+        </div>
+        <h1>Веб-платформа мониторинга<br>рабочих процессов на объектах</h1>
+        <p class="project-lead">
+            SPA-подобное Django-приложение для контроля задач, оборудования и алармов
+            на производственных объектах (станциях). Поддерживает несколько организаций,
+            развёрнуто на <a href="https://www.fieldlog.ru" target="_blank" rel="noopener" style="color: var(--accent);">fieldlog.ru</a>.
+        </p>
+        <div class="project-meta">
+            <div class="meta-item">
+                <span class="meta-label">Стек</span>
+                <span class="meta-value">Django 6, PostgreSQL, Docker</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Домен</span>
+                <span class="meta-value">fieldlog.ru (HTTPS)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Тип</span>
+                <span class="meta-value">Fullstack web-приложение</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-section">
+        <h2>О проекте</h2>
+        <p>
+            Платформа для управления рабочими процессами на производственных объектах. Сотрудники
+            ведут задачи по станциям, контролируют оборудование на складах, работают со справочником
+            алармов и базой инструкций. Интерфейс реализован как SPA: контент подгружается
+            в панель через AJAX без перезагрузки страницы. Архитектура поддерживает мультиарендность —
+            каждая организация работает в своём изолированном пространстве через URL-префикс.
+        </p>
+    </div>
+
+    <div class="project-section">
+        <h2>Ключевые модули</h2>
+        <ul>
+            <li>Объекты / станции — карточки с задачами, координатами, описанием</li>
+            <li>Задачи — статусы, ответственные, вложения, комментарии, экспорт в .xlsx</li>
+            <li>Справочник алармов — поиск и пагинация через AJAX</li>
+            <li>Склады и оборудование — учёт с привязкой к объекту, экспорт в .xlsx</li>
+            <li>База инструкций — файлы и внешние ссылки, лимит на пользователя</li>
+            <li>Профиль и роли — кастомная авторизация, разграничение прав</li>
+        </ul>
+    </div>
+
+    <div class="project-section">
+        <h2>Техническое</h2>
+        <ul>
+            <li>Мультиарендность через <code style="color:var(--accent)">org_slug</code> в URL — новая орг без изменения кода</li>
+            <li>OrgMixin: автофильтрация queryset и проверка доступа для каждого view</li>
+            <li>Защита медиафайлов от IDOR через X-Accel-Redirect (Nginx + Django)</li>
+            <li>Защита от брутфорса — django-axes: блокировка после 5 попыток на 1 час</li>
+            <li>XSS-защита: DOM API вместо innerHTML там, где данные от пользователя</li>
+            <li>CI/CD: GitHub Actions → тесты → автодеплой по SSH при мерже в main</li>
+        </ul>
+    </div>
+
+    <div class="project-section">
+        <h2>Скриншоты</h2>
+        <div class="screenshots-gallery">
+
+            <div class="gallery-item">
+                <img src="../assets/img/crm-agency/login.jpg" alt="Страница входа">
+                <p class="gallery-caption">Страница входа</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/crm-agency/register.jpg" alt="Регистрация">
+                <p class="gallery-caption">Регистрация пользователя</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/crm-agency/profile.jpg" alt="Профиль пользователя">
+                <p class="gallery-caption">Профиль пользователя</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/crm-agency/objects.jpg" alt="Список объектов">
+                <p class="gallery-caption">Список объектов / станций</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/crm-agency/obj_details.jpg" alt="Карточка объекта">
+                <p class="gallery-caption">Карточка объекта</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/crm-agency/tasks.jpg" alt="Список задач">
+                <p class="gallery-caption">Список задач</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/crm-agency/tasks_detail.jpg" alt="Карточка задачи">
+                <p class="gallery-caption">Карточка задачи с вложениями</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/crm-agency/task_create.jpg" alt="Создание задачи">
+                <p class="gallery-caption">Создание задачи</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/crm-agency/knowledge.jpg" alt="База инструкций">
+                <p class="gallery-caption">База инструкций</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="project-actions">
+        <a href="../index.html#contact" class="btn btn-primary">Заказать похожее</a>
+        <a href="../index.html#portfolio" class="btn btn-ghost">← Все работы</a>
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 Шленсков Алексей · Python Backend Developer</p>
+</footer>
+
+<div id="lightbox" class="lightbox-overlay">
+    <button id="lightbox-close" class="lightbox-close">✕</button>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="">
+</div>
+<script src="../assets/js/lightbox.js"></script>
+
+</body>
+</html>

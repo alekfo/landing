@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бот контроля расходов VooMoo — Алексей</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+    <a href="../index.html" class="nav-logo">shlenskov.pro</a>
+    <ul class="nav-links">
+        <li><a href="../index.html#portfolio">← Все работы</a></li>
+        <li><a href="../index.html#contact">Заказать</a></li>
+    </ul>
+</nav>
+
+<main class="project-page container">
+
+    <div class="breadcrumb">
+        <a href="../index.html">Главная</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="../index.html#portfolio">Работы</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Бот контроля расходов VooMoo</span>
+    </div>
+
+    <div class="project-header">
+        <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">aiogram</span>
+            <span class="tag">SQLite / SQLAlchemy</span>
+            <span class="tag">Google Sheets API</span>
+            <span class="tag purple">Docker</span>
+        </div>
+        <h1>Telegram-бот контроля расходов<br>«Отдел логистики VooMoo»</h1>
+        <p class="project-lead">
+            Корпоративный Telegram-бот для отдела логистики: сотрудники фиксируют расходы прямо
+            в мессенджере, администратор видит всю аналитику и одним нажатием синхронизирует данные
+            с Google-таблицей.
+        </p>
+        <div class="project-meta">
+            <div class="meta-item">
+                <span class="meta-label">Бот</span>
+                <span class="meta-value">@voomoo_spending_control_bot</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Стек</span>
+                <span class="meta-value">Python, aiogram, SQLAlchemy</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Деплой</span>
+                <span class="meta-value">Docker Compose</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-section">
+        <h2>О проекте</h2>
+        <p>
+            Бот разработан для внутреннего использования в отделе логистики компании VooMoo.
+            До этого расходы фиксировались вручную — менеджер собирал данные по чатам и вносил
+            их в таблицу. Теперь каждый сотрудник сам добавляет расход через бота,
+            а администратор в любой момент получает актуальный срез и выгружает его в Google Sheets
+            для общей отчётности.
+        </p>
+    </div>
+
+    <div class="project-section">
+        <h2>Режим сотрудника</h2>
+        <ul>
+            <li>Регистрация — запрос на подтверждение уходит администратору</li>
+            <li>Добавление расхода: сумма, категория, комментарий</li>
+            <li>Просмотр своих расходов за выбранный месяц</li>
+        </ul>
+    </div>
+
+    <div class="project-section">
+        <h2>Режим администратора</h2>
+        <ul>
+            <li>Подтверждение или отклонение новых сотрудников</li>
+            <li>Просмотр списка всех зарегистрированных сотрудников</li>
+            <li>Расходы любого сотрудника за выбранный месяц</li>
+            <li>Синхронизация всей базы с Google-таблицей одной кнопкой</li>
+            <li>Прямая ссылка на Google-таблицу прямо из бота</li>
+        </ul>
+    </div>
+
+    <div class="project-section">
+        <h2>Скриншоты</h2>
+        <div class="screenshots-gallery">
+
+            <div class="gallery-item">
+                <img src="../assets/img/google-sheets/greeting.png"
+                     alt="Приветствие нового сотрудника">
+                <p class="gallery-caption">Приветствие нового сотрудника</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/google-sheets/registration.png"
+                     alt="Регистрация сотрудника">
+                <p class="gallery-caption">Регистрация сотрудника</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/google-sheets/waiting_for_confirmation.png"
+                     alt="Ожидание подтверждения">
+                <p class="gallery-caption">Ожидание подтверждения от админа</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/google-sheets/new_employee_alarm.png"
+                     alt="Уведомление администратора">
+                <p class="gallery-caption">Уведомление админа о новом сотруднике</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/google-sheets/confirmed.png"
+                     alt="Подтверждение регистрации">
+                <p class="gallery-caption">Подтверждение регистрации у сотрудника</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/google-sheets/employees_main_menu.png"
+                     alt="Главное меню сотрудника">
+                <p class="gallery-caption">Главное меню сотрудника</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/google-sheets/adding_spending.png"
+                     alt="Добавление расхода">
+                <p class="gallery-caption">Добавление расхода</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/google-sheets/show_spending.png"
+                     alt="Просмотр расходов сотрудника">
+                <p class="gallery-caption">Просмотр своих расходов за месяц</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/google-sheets/admins_main_menu.png"
+                     alt="Главное меню администратора">
+                <p class="gallery-caption">Главное меню администратора</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/google-sheets/employees_list.png"
+                     alt="Список сотрудников">
+                <p class="gallery-caption">Список зарегистрированных сотрудников</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/google-sheets/get_employees_spendings.png"
+                     alt="Расходы сотрудника">
+                <p class="gallery-caption">Расходы сотрудника за выбранный месяц</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/google-sheets/sync.png"
+                     alt="Синхронизация с Google Sheets">
+                <p class="gallery-caption">Синхронизация данных с Google-таблицей</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/google-sheets/link.png"
+                     alt="Ссылка на Google-таблицу">
+                <p class="gallery-caption">Прямая ссылка на Google-таблицу</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="project-actions">
+        <a href="../index.html#contact" class="btn btn-primary">Заказать похожее</a>
+        <a href="../index.html#portfolio" class="btn btn-ghost">← Все работы</a>
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 Шленсков Алексей · Python Backend Developer</p>
+</footer>
+
+<div id="lightbox" class="lightbox-overlay">
+    <button id="lightbox-close" class="lightbox-close">✕</button>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="">
+</div>
+<script src="../assets/js/lightbox.js"></script>
+</body>
+</html>

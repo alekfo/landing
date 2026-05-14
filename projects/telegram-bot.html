@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат-бот ЛОГОПЕДиЯ — Алексей</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+    <a href="../index.html" class="nav-logo">shlenskov.pro</a>
+    <ul class="nav-links">
+        <li><a href="../index.html#portfolio">← Все работы</a></li>
+        <li><a href="../index.html#contact">Заказать</a></li>
+    </ul>
+</nav>
+
+<main class="project-page container">
+
+    <div class="breadcrumb">
+        <a href="../index.html">Главная</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="../index.html#portfolio">Работы</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Чат-бот ЛОГОПЕДиЯ</span>
+    </div>
+
+    <div class="project-header">
+        <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Telegram Bot API</span>
+            <span class="tag">Peewee ORM</span>
+            <span class="tag purple">Docker</span>
+        </div>
+        <h1>Telegram-бот для логопедического центра<br>«ЛОГОПЕДиЯ»</h1>
+        <p class="project-lead">
+            Корпоративный бот для управления занятиями в логопедическом центре: клиенты видят
+            своё расписание и получают напоминания, администратор загружает расписание из Excel,
+            управляет клиентами и делает рассылки — всё прямо в Telegram.
+        </p>
+        <div class="project-meta">
+            <div class="meta-item">
+                <span class="meta-label">Бот</span>
+                <span class="meta-value">@OURLogopedBot</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Стек</span>
+                <span class="meta-value">Python, Peewee ORM, SQLite</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Деплой</span>
+                <span class="meta-value">Docker Compose</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-section">
+        <h2>О проекте</h2>
+        <p>
+            Логопедический центр вёл запись и расписание вручную — администратор тратил время
+            на оповещение каждого клиента отдельно. Бот автоматизировал весь цикл: загрузку
+            расписания, уведомления о предстоящих занятиях, сбор подтверждений явки и выгрузку
+            отчётов. Клиент в любой момент может посмотреть своё расписание и оставить отзыв.
+        </p>
+    </div>
+
+    <div class="project-section">
+        <h2>Режим клиента</h2>
+        <ul>
+            <li>Регистрация и персональное меню</li>
+            <li>Просмотр предстоящих занятий</li>
+            <li>Автоуведомления о ближайшем занятии</li>
+            <li>Уведомление при изменении расписания</li>
+            <li>Подтверждение явки или отмена занятия</li>
+            <li>Оставить отзыв или предложение</li>
+        </ul>
+    </div>
+
+    <div class="project-section">
+        <h2>Режим администратора</h2>
+        <ul>
+            <li>Загрузка недельного расписания из Excel-файла</li>
+            <li>Просмотр и редактирование активного расписания</li>
+            <li>Добавление и удаление уроков вручную</li>
+            <li>Список активных клиентов в базе</li>
+            <li>Массовая рассылка уведомлений всем клиентам</li>
+            <li>Выгрузка Excel-отчётности</li>
+        </ul>
+    </div>
+
+    <div class="project-section">
+        <h2>Скриншоты</h2>
+        <div class="screenshots-gallery">
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/registration.png"
+                     alt="Регистрация клиента">
+                <p class="gallery-caption">Регистрация клиента</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/main_clients_menu.png"
+                     alt="Главное меню клиента">
+                <p class="gallery-caption">Главное меню клиента</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/about_bot_for_client.png"
+                     alt="Информация о боте">
+                <p class="gallery-caption">Информация о боте для клиента</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/clients_schedule.png"
+                     alt="Расписание клиента">
+                <p class="gallery-caption">Расписание клиента</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/leave_feedback.png"
+                     alt="Оставить отзыв">
+                <p class="gallery-caption">Оставить отзыв</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/notifications_about_upcoming_lessons.png"
+                     alt="Уведомление о занятии">
+                <p class="gallery-caption">Уведомление о предстоящем занятии</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/notifications_about_changes.png"
+                     alt="Уведомление об изменении расписания">
+                <p class="gallery-caption">Уведомление об изменении расписания</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/confirmation_or_cancelation.png"
+                     alt="Подтверждение или отмена занятия">
+                <p class="gallery-caption">Подтверждение явки или отмена занятия</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/main_admins_menu.png"
+                     alt="Главное меню администратора">
+                <p class="gallery-caption">Главное меню администратора</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/clients_output.png"
+                     alt="Список клиентов">
+                <p class="gallery-caption">Список активных клиентов</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/schedule_menu.png"
+                     alt="Меню управления расписанием">
+                <p class="gallery-caption">Меню управления расписанием</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/show_schedule.png"
+                     alt="Просмотр расписания недели">
+                <p class="gallery-caption">Просмотр расписания выбранной недели</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/upload_schedule.png"
+                     alt="Загрузка расписания из Excel">
+                <p class="gallery-caption">Загрузка расписания из Excel</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/exsel_example.png"
+                     alt="Пример Excel-файла">
+                <p class="gallery-caption">Пример Excel-файла с расписанием</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/chenge_sched_menu.png"
+                     alt="Изменение расписания">
+                <p class="gallery-caption">Меню изменения расписания</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/adding_lesson.png"
+                     alt="Добавление урока">
+                <p class="gallery-caption">Добавление урока</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/removing_lesson.png"
+                     alt="Удаление урока">
+                <p class="gallery-caption">Удаление урока</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/mass_mailing.png"
+                     alt="Массовая рассылка">
+                <p class="gallery-caption">Массовая рассылка клиентам</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/telegram-bot/downloads.png"
+                     alt="Выгрузка отчётности">
+                <p class="gallery-caption">Выгрузка Excel-отчётности</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="project-actions">
+        <a href="../index.html#contact" class="btn btn-primary">Заказать похожее</a>
+        <a href="../index.html#portfolio" class="btn btn-ghost">← Все работы</a>
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 Шленсков Алексей · Python Backend Developer</p>
+</footer>
+
+<div id="lightbox" class="lightbox-overlay">
+    <button id="lightbox-close" class="lightbox-close">✕</button>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="">
+</div>
+<script src="../assets/js/lightbox.js"></script>
+
+</body>
+</html>
