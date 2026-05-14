@@ -20,4 +20,4 @@ jobs:
             set -e
             cd /var/www/landing
             git pull origin main
-            docker compose up -d --build --no-deps backend
+            docker-compose up -d --build --no-deps backend
