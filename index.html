@@ -17,6 +17,11 @@
         <li><a href="#portfolio">Работы</a></li>
         <li><a href="#contact">Контакт</a></li>
     </ul>
+    <button class="burger" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 </nav>
 
 <!-- ═══ HERO ═══════════════════════════════════════════ -->
@@ -269,6 +274,23 @@
             btn.disabled = false;
             btn.textContent = 'Отправить заявку →';
         }
+    });
+</script>
+
+<script>
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            burger.classList.remove('open');
+            navLinks.classList.remove('open');
+        });
     });
 </script>
 </body>

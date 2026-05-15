@@ -675,10 +675,59 @@ footer {
     font-size: 0.825rem;
 }
 
+/* ─── BURGER ──────────────────────────────── */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.burger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 /* ─── RESPONSIVE ──────────────────────────── */
 @media (max-width: 768px) {
-    nav { padding: 0 1.25rem; }
-    .nav-links { display: none; }
+    nav {
+        position: sticky;
+        top: 0;
+        height: auto;
+        min-height: 60px;
+        flex-wrap: wrap;
+        padding: 0 1.25rem;
+    }
+
+    .burger { display: flex; }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        padding: 0.5rem 0 1rem;
+        border-top: 1px solid var(--border);
+    }
+
+    .nav-links.open { display: flex; }
+
+    .nav-links li a {
+        display: block;
+        padding: 0.75rem 0;
+        font-size: 1rem;
+    }
 
     .container { padding: 0 1.25rem; }
     section { padding: 64px 0; }
