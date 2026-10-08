@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-тренажёр собеседований prepstats.pro — Алексей</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+    <a href="../index.html" class="nav-logo">shlenskov.pro</a>
+    <ul class="nav-links">
+        <li><a href="../index.html#portfolio">← Все работы</a></li>
+        <li><a href="../index.html#contact">Заказать</a></li>
+    </ul>
+</nav>
+
+<main class="project-page container">
+
+    <div class="breadcrumb">
+        <a href="../index.html">Главная</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="../index.html#portfolio">Работы</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>AI-тренажёр собеседований prepstats.pro</span>
+    </div>
+
+    <div class="project-header">
+        <div class="project-tags">
+            <span class="tag">Django 6</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Claude API</span>
+            <span class="tag purple">ЮKassa</span>
+            <span class="tag purple">Docker</span>
+            <span class="tag purple">GitHub Actions</span>
+        </div>
+        <h1>AI-тренажёр для подготовки<br>к техническим собеседованиям</h1>
+        <p class="project-lead">
+            Веб-сервис, в котором пользователь вставляет текст вакансии, AI задаёт по ней 8 вопросов
+            и оценивает каждый ответ. Платные подписки оплачиваются через ЮKassa,
+            развёрнут на <a href="https://prepstats.pro" target="_blank" rel="noopener" style="color: var(--accent);">prepstats.pro</a>.
+        </p>
+        <div class="project-meta">
+            <div class="meta-item">
+                <span class="meta-label">Стек</span>
+                <span class="meta-value">Django 6, PostgreSQL, Docker</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Домен</span>
+                <span class="meta-value">prepstats.pro (HTTPS)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Тип</span>
+                <span class="meta-value">Fullstack web-приложение</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-section">
+        <h2>О проекте</h2>
+        <p>
+            Сервис для подготовки к собеседованиям. Пользователь проходит интервью по тексту
+            вакансии, получает разбор каждого ответа и видит, как меняются его результаты
+            от попытки к попытке. Там же можно повторять вопросы на флэш-карточках и собрать
+            резюме с помощью AI. Бесплатного тарифа хватает на одно интервью в день,
+            платные тарифы поднимают дневные лимиты.
+        </p>
+    </div>
+
+    <div class="project-section feature-block">
+        <h2>01 · Интервью</h2>
+        <h3 class="feature-title">8 вопросов по тексту вакансии</h3>
+        <p>
+            Пользователь вставляет описание вакансии или выбирает его из истории и задаёт уровень —
+            Junior, Middle или Pro. AI составляет технические, поведенческие и ситуационные вопросы
+            под эту вакансию. Ответы пишутся по одному, каждый сразу уходит на оценку;
+            незаконченное интервью можно продолжить позже.
+        </p>
+        <div class="screenshots-gallery wide">
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/index.jpg" alt="Запуск интервью">
+                <p class="gallery-caption">Запуск: текст вакансии и уровень</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/interview_loading.jpg" alt="Генерация вопросов">
+                <p class="gallery-caption">AI готовит вопросы</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/interview_question.jpg" alt="Вопрос интервью">
+                <p class="gallery-caption">Вопрос интервью</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/interview_answer.jpg" alt="Ответ на вопрос">
+                <p class="gallery-caption">Ответ на вопрос</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/interview_evaluating.jpg" alt="Оценка ответа">
+                <p class="gallery-caption">AI оценивает ответ</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="project-section feature-block">
+        <h2>02 · Отчёт</h2>
+        <h3 class="feature-title">Разбор каждого ответа</h3>
+        <p>
+            После интервью пользователь получает общий балл и разбор по каждому вопросу:
+            оценку от 1 до 10, сильные стороны, что улучшить и подсказку к идеальному ответу.
+            Все пройденные интервью остаются в истории, к любому отчёту можно вернуться.
+        </p>
+        <div class="screenshots-gallery wide">
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/report.jpg" alt="Результаты интервью">
+                <p class="gallery-caption">Итоговый отчёт с общим баллом</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/feedback.jpg" alt="Разбор ответа">
+                <p class="gallery-caption">Сильные стороны и что улучшить</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/history.jpg" alt="История интервью">
+                <p class="gallery-caption">История интервью</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="project-section feature-block">
+        <h2>03 · Статистика</h2>
+        <h3 class="feature-title">Менторство от AI</h3>
+        <p>
+            Интервью по одной вакансии складываются в статистику: средний балл, тренд и
+            повторяющиеся слабые места. На странице вакансии — график баллов по попыткам
+            и анализ от AI: общий прогресс, хронические проблемы, что стало лучше
+            и что подтянуть дальше.
+        </p>
+        <div class="screenshots-gallery wide">
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/statistics.jpg" alt="Прогресс по вакансиям">
+                <p class="gallery-caption">Прогресс по вакансиям</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/vacancy_stats.jpg" alt="Статистика по вакансии">
+                <p class="gallery-caption">График баллов и AI-анализ прогресса</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="project-section feature-block">
+        <h2>04 · Флэш-карточки</h2>
+        <h3 class="feature-title">Повторение пройденных вопросов</h3>
+        <p>
+            Вопросы из завершённых интервью превращаются в карточки для тренировки.
+            Их можно отфильтровать по типу вопроса, уровню и слабому месту
+            или оставить только те, на которые ответ был слабым.
+        </p>
+        <div class="screenshots-gallery wide">
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/flashcards.jpg" alt="Флэш-карточки">
+                <p class="gallery-caption">Тренировка на карточках</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="project-section feature-block">
+        <h2>05 · Резюме</h2>
+        <h3 class="feature-title">Резюме с помощью AI</h3>
+        <p>
+            Пользователь указывает целевую должность и проходит опрос из семи шагов:
+            контакты, о себе, опыт, образование, навыки, языки, курсы. AI переписывает ответы
+            в аккуратный текст резюме, сохраняя факты. Любой раздел можно поправить вручную,
+            готовое резюме скачивается в PDF и DOCX.
+        </p>
+        <div class="screenshots-gallery wide">
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/resume_new.jpg" alt="Создание резюме">
+                <p class="gallery-caption">Создание резюме под должность</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/resume_step_contacts.jpg" alt="Опрос: контакты">
+                <p class="gallery-caption">Опрос: контакты</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/resume_step_experience.jpg" alt="Опрос: опыт работы">
+                <p class="gallery-caption">Опрос: опыт работы</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/resume_generating.jpg" alt="Генерация резюме">
+                <p class="gallery-caption">AI составляет резюме</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/resume.jpg" alt="Готовое резюме">
+                <p class="gallery-caption">Готовое резюме, экспорт в PDF и DOCX</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/resume_sections.jpg" alt="Разделы резюме">
+                <p class="gallery-caption">Разделы, улучшенные AI</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="project-section feature-block">
+        <h2>06 · Подписки</h2>
+        <h3 class="feature-title">Тарифы и оплата через ЮKassa</h3>
+        <p>
+            Три тарифа различаются дневными лимитами на интервью, резюме и обновления
+            AI-анализа. Оплата проходит на стороне ЮKassa, подписка включается автоматически
+            после подтверждения платежа и сама отключается по истечении срока.
+            О покупке и об окончании подписки пользователь получает письмо.
+        </p>
+        <div class="screenshots-gallery wide">
+
+            <div class="gallery-item">
+                <img src="../assets/img/prepstats/subscription.jpg" alt="Тарифы">
+                <p class="gallery-caption">Тарифы и подписка</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="project-actions">
+        <a href="../index.html#contact" class="btn btn-primary">Заказать похожее</a>
+        <a href="../index.html#portfolio" class="btn btn-ghost">← Все работы</a>
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 Шленсков Алексей · Python Backend Developer</p>
+</footer>
+
+<div id="lightbox" class="lightbox-overlay">
+    <button id="lightbox-close" class="lightbox-close">✕</button>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="">
+</div>
+<script src="../assets/js/lightbox.js"></script>
+
+</body>
+</html>
