@@ -20,4 +20,8 @@ jobs:
             set -e
             cd /var/www/landing
             git pull origin main
-            docker-compose up -d --build --no-deps backend
+            docker-compose build backend
+            # docker-compose 1.29 падает с KeyError 'ContainerConfig' при пересоздании
+            # контейнера на новых версиях Docker — удаляем старый контейнер сами
+            docker-compose rm -sf backend
+            docker-compose up -d --no-deps backend
